@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cbsystem.view.DeleteReservationsController">
+   <children>
+      <TableView layoutX="95.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" fx:id="reservationsTable">
+        <columns>
+
+        </columns>
+      </TableView>
+      <Button layoutX="127.0" layoutY="228.0" mnemonicParsing="false" text="Delete" onAction="#handleDelete"/>
+      <Button layoutX="207.0" layoutY="228.0" mnemonicParsing="false" text="Cancel" onAction="#handleCancel"/>
+   </children>
+</AnchorPane>

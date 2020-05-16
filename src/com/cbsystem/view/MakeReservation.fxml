@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="461.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cbsystem.view.MakeReservationsController">
+   <children>
+      <TextField fx:id="NameField" layoutX="173.0" layoutY="40.0" />
+      <Label layoutX="129.0" layoutY="45.0" text="Name" />
+      <ChoiceBox fx:id="choiceBox" layoutX="173.0" layoutY="80.0" onAction="#handleConcertSelected" prefHeight="27.0" prefWidth="161.0" />
+      <Label layoutX="118.0" layoutY="85.0" text="Concert" />
+      <TableView fx:id="selectedSeatTable" layoutX="191.0" layoutY="145.0" prefHeight="97.0" prefWidth="251.0">
+        <columns>
+
+        </columns>
+      </TableView>
+      <Label layoutX="261.0" layoutY="121.0" text="Selected Tickets" />
+      <Button layoutX="61.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleAddSeat" prefHeight="27.0" prefWidth="108.0" text="Choose Seats" />
+      <Button layoutX="61.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleRemoveSeat" prefHeight="27.0" prefWidth="108.0" text="Delete Seat" />
+      <Label layoutX="50.0" layoutY="271.0" text="Price:" />
+      <TextField fx:id="PriceField" layoutX="100.0" layoutY="266.0" />
+      <Button layoutX="111.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleComfirm" text="Confirm" />
+      <Button layoutX="198.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+      <Label layoutX="20.0" layoutY="14.0" text="Reservation Number:" />
+      <Label fx:id="SerialField" layoutX="147.0" layoutY="14.0" prefHeight="17.0" prefWidth="62.0" text="#00000" />
+   </children>
+</AnchorPane>
