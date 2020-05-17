@@ -6,10 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-
-/**
- * Createdon 11/05/2020.
- */
 public class ReservationConfirmDialogController {
 
     // labels fot the confrim scene to be referenced

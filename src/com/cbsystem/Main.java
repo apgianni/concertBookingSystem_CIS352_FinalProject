@@ -59,7 +59,7 @@ public class Main extends Application {
         Venue MadisonSquare = new Venue( 2, "Madison Square", 100, 100);
 
         // Test Concerts
-        Concert BillieEilish2020 = new Concert(0, "Billie Eilish", new Date(), MadisonSquare);
+        Concert BillieEilish2020 = new Concert(2, "Billie Eilish", new Date(), MadisonSquare);
         Concert Muse = new Concert(1, "Muse", new Date(), O2);
 
         // testing CBS
@@ -68,8 +68,6 @@ public class Main extends Application {
         GlobalCBS.addConcert(Muse);
 
         populateReservationsFromDB();
-
-
     }
 
     // methods to access Global CBS system data
@@ -198,7 +196,7 @@ public class Main extends Application {
             controller.setMain(this);
             controller.setDialogStage(dialogStage);
 
-            // sets the seatMap of the current slectec concert as the current seatMap
+            // sets the seatMap of the current selected concert as the current seatMap
             currentSeatMap = seatMap;
             controller.setSeatMap(seatMap);
             controller.showSeatList(chosenSeats);

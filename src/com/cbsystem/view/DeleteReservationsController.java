@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 
 import java.util.HashMap;
 
-
 public class DeleteReservationsController {
 
     // scene base table for the reservations that are currently on the system
@@ -19,6 +18,7 @@ public class DeleteReservationsController {
     private TableColumn<Reservation, Integer> numberCol;
     private TableColumn<Reservation, Double> priceCol;
     private TableColumn<Reservation, String> nameCol;
+    private TableColumn<Reservation, String> concertCol;
 
     // base scene variables
     private Stage dialogStage;
@@ -33,14 +33,16 @@ public class DeleteReservationsController {
         numberCol = new TableColumn("Number");
         priceCol = new TableColumn("Price");
         nameCol = new TableColumn("Attendee");
+        concertCol = new TableColumn("Concert");
 
         // set observable property that columns will look for every time a new object of type Reservation is added
         numberCol.setCellValueFactory(new PropertyValueFactory<>("serialNumber"));
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("attendeeName"));
+        concertCol.setCellValueFactory(new PropertyValueFactory<>("reservedConcert"));
 
         // add columns to table
-        reservationsTable.getColumns().addAll(numberCol, nameCol, priceCol);
+        reservationsTable.getColumns().addAll(numberCol, nameCol, priceCol, concertCol);
 
     }
 

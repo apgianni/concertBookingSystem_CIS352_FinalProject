@@ -19,8 +19,7 @@ public class Concert {
     private HashMap<Integer, Seat> seatMap;
 
     // base constructor
-    public Concert()
-    {
+    public Concert() {
         // empty constructor
     }
 
@@ -41,14 +40,10 @@ public class Concert {
         this.seatMap = new HashMap<Integer, Seat>();
 
         seatMap.put(0, new Seat(0, 10.0, SeatClass.STANDING));
-        for(int i = 1; i <= venue.getNumberOfSeats(); i++)
-        {
-            if(i < 30)
-            {
+        for (int i = 1; i <= venue.getNumberOfSeats(); i++) {
+            if (i < 30) {
                 seatMap.put(i, new Seat(i, 30.0, SeatClass.FIRST_CLASS));
-            }
-            else
-            {
+            } else {
                 seatMap.put(i, new Seat(i, 20.0, SeatClass.SECOND_CLASS));
 
             }
@@ -57,16 +52,16 @@ public class Concert {
 
     @Override
     public String toString() {
-        return "Concert{" +
-                "ID=" + ID +
-                ", name='" + name + '\'' +
-                ", date=" + date +
-                ", venue=" + venue +
-                ", seatCapacity=" + seatCapacity +
-                ", standingCapacit=" + standingCapacity +
-                ", currentSeatOccupancy=" + currentSeatOccupancy +
-                ", currentStandingOccupancy=" + currentStandingOccupancy +
-                ", seatMap=" + seatMap +
+        return "{" +
+                //"ID=" + ID +
+                "'" + name + '\'' +
+                //", date=" + date +
+                //", venue=" + venue +
+                //", seatCapacity=" + seatCapacity +
+                //", standingCapacit=" + standingCapacity +
+                //", currentSeatOccupancy=" + currentSeatOccupancy +
+                //", currentStandingOccupancy=" + currentStandingOccupancy +
+                //", seatMap=" + seatMap +
                 '}';
     }
 
@@ -79,18 +74,15 @@ public class Concert {
         return this.name;
     }
 
-    public void setName(String _name)
-    {
+    public void setName(String _name) {
         this.name = _name;
     }
 
-    public Date getDate()
-    {
+    public Date getDate() {
         return this.date;
     }
 
-    public void setDate(Date _date)
-    {
+    public void setDate(Date _date) {
         this.date = _date;
     }
 
@@ -102,8 +94,7 @@ public class Concert {
         this.currentProfit = currentProfit;
     }
 
-    public int getSeatCapacity()
-    {
+    public int getSeatCapacity() {
         return seatCapacity;
     }
 
@@ -144,19 +135,16 @@ public class Concert {
     }
 
     // methods
-    public boolean isSeatReserved(int _seat)
-    {
+    public boolean isSeatReserved(int _seat) {
         return this.seatMap.get(_seat).isReserved();
     }
 
-    public void reserveSeat(int _seat)
-    {
+    public void reserveSeat(int _seat) {
         this.seatMap.get(_seat).setReserved(true);
         this.currentSeatOccupancy++;
     }
 
-    public void freeSeat(int _seat)
-    {
+    public void freeSeat(int _seat) {
         this.seatMap.get(_seat).setReserved(false);
         this.currentSeatOccupancy--;
     }
@@ -166,11 +154,9 @@ public class Concert {
         java.util.Iterator iter = seatMap.entrySet().iterator();
         while (iter.hasNext()) {
             Map.Entry<Integer, Seat> element = (Map.Entry<Integer, Seat>) iter.next();
-            if(element.getValue().isReserved()) {
+            if (element.getValue().isReserved()) {
                 System.out.println(element.getKey() + " = reserved");
-            }
-            else
-            {
+            } else {
                 System.out.println(element.getKey() + " = free");
             }
             iter.remove(); // avoids a ConcurrentModificationException
